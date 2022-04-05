@@ -10,4 +10,8 @@ router.get('/agregarProducto', function(req, res, next) {
     res.send('holaaa');
 });
 
+router.get('/detalleProducto', function(req, res, next) {
+  res.send('holaaa');
+});
+
 module.exports = router;
