@@ -18,4 +18,7 @@ router.get('/detalleProducto', function(req, res, next) {
 //router.get('/detalleProducto/color/:color', controller.color);
 //router.get('/detalleProducto/:id', controller);
 
+  res.send('holaaa');
+});
+
 module.exports = router;
