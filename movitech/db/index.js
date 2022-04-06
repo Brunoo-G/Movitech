@@ -1,4 +1,5 @@
-let perfil = {email: 'bobbyfischer@gmail.com' ,
+let perfil = {
+    email: 'bobbyfischer@gmail.com' ,
     usuario: 'Bobby_43' ,
     contraseña: 'p4wnE4' ,
     nacimiento: '09/03/1943' ,
