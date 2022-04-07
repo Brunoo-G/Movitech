@@ -528,3 +528,15 @@ textarea.form-input {
     margin: auto;
   }
 }
+
+
+/*====== formularios ======*/
+
+.form-control{
+  padding: 10px
+}
+
+.form-label{
+  font-size: 1.2em;
+}
+
