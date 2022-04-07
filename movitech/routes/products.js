@@ -1,17 +1,12 @@
 var express = require('express');
+const controller = require('../controllers/productController');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', controller.index);
 
-router.get('/agregarProducto', function(req, res, next) {
-    res.send('holaaa');
-});
+router.get('/agregarProducto', controller.productAdd);
 
-router.get('/detalleProducto', function(req, res, next) {
-  res.send('holaaa');
-});
+router.get('/detalleProducto', controller.productDetail);
 
 module.exports = router;
