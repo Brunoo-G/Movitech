@@ -5,10 +5,10 @@ const controller = {
         res.render('index');
     },
     login: function(req, res, next) {
-        res.render('login', { title: 'Express' });
+        res.render('login');
     },
     register: function(req, res, next) {
-        res.render('register', { title: 'Registrando ando' });
+        res.render('register');
     }
 };
 

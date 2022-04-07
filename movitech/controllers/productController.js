@@ -1,4 +1,4 @@
-var products = require("../data/products")
+var products = require("../db/index")
 
 const controller = {
     index: function(req, res, next) {
@@ -11,7 +11,5 @@ const controller = {
         res.render('product');
     }
 }
-
-
 
 module.exports = controller;
