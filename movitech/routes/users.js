@@ -5,6 +5,6 @@ var controller = require('../controllers/userController')
 
 router.get('/profile', controller.profile) ;
 
-router.get('/profile/edit', controller.profile) ;
+router.get('/profile/edit', controller.profileEdit) ;
 
 module.exports = router;
