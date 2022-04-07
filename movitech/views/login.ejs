@@ -22,28 +22,38 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title" >Iniciar sesion</h2>
-			</div>
+
 			<!-- Show the "ultimos" products -->
 			
-			<h2>
-			  <form action="/users/profile" class="form-login">
-				<div class="mb-3">
-				  <label for="exampleInputEmail1" class="form-label">Email</label>
-				  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-				  <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+			<h2>			  
+			<div id="contenedor">
+				<div id="central">
+					<div id="login">
+						<div class="titulo">
+							Bienvenido
+						</div>
+						<form action="/users/profile" id="loginform">
+							<input type="text" name="usuario" placeholder="Usuario">
+							
+							<input type="password" placeholder="Contraseña" name="password">
+
+							<label class="form-check-label" for="exampleCheck1">Recordarme</label>
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							
+							<button type="submit" title="Ingresar" name="Ingresar">Ingresar</button>
+
+						</form>
+						<div class="pie-form">
+							<a href="#">¿Perdiste tu contraseña?</a>
+							<a href="#">¿No tienes Cuenta? Registrate</a>
+						</div>
+					</div>
+					<div class="inferior">
+						<a href="#">Volver</a>
+					</div>
 				</div>
-				<div class="mb-3">
-				  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-				  <input type="password" class="form-control" id="exampleInputPassword1">
-				</div>
-				<div class="mb-3 form-check">
-				  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				  <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-				</div>
-				<button  type="submit" class="btn btn-primary">Ingresar</button>
-			  </form>
+			</div>
+
 			</h2>
 
 
