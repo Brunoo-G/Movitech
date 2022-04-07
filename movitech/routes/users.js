@@ -3,8 +3,8 @@ var router = express.Router();
 var controller = require('../controllers/userController')
 
 
-router.get('/me', controller.profile) ;
+router.get('/profile', controller.profile) ;
 
-router.get('/me/edit', controller.profile) ;
+router.get('/profile/edit', controller.profile) ;
 
 module.exports = router;
