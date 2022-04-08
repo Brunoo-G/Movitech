@@ -272,7 +272,7 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: black;
   font-size: 3.5em;
 }
 
@@ -438,7 +438,8 @@ label{
 }
 
 .form-check-input{
-  background-color: #1259c3;
+  background-color: #00FCA8;
+  width: 10px;
 }
 
 .form-input {
@@ -561,7 +562,7 @@ textarea.form-input {
 
 .titulo {
   font-size: 250%;
-  color:#bbe1fa;
+  color:#00FCA8;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -620,7 +621,7 @@ textarea.form-input {
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   
-  background-color: #bbe1fa;
+  background-color: #00FCA8;
   
   margin-top: 10px;
 }
@@ -639,7 +640,7 @@ textarea.form-input {
 .pie-form a {
   display: block;
   text-decoration: none;
-  color: #bbe1fa;
+  color: #00FCA8;
   margin-bottom: 3px;
 }
 
