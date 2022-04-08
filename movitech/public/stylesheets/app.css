@@ -272,7 +272,7 @@ hr {
 }
 
 .footer-data i {
-  color: black;
+  color:black;
   font-size: 3.5em;
 }
 
@@ -553,6 +553,10 @@ textarea.form-input {
   font-weight: normal;
   font-size: 100%;
   color: #1b262c;
+  width: 800px;
+}
+.row{
+  justify-content: center;
 }
 
 #central {

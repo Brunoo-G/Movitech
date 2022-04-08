@@ -11,15 +11,41 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Registrate</h2>
-			</div>
+		
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de registro. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
+			<h2>
+				<div id="contenedor">
+					<div id="central">
+						<div id="login">
+							<div class="titulo">
+								Crea tu cuenta
+							</div>
+							<form action="/users/profile" id="loginform">
+								<input type="text" name="email" placeholder="Email">
+
+								<input type="text" name="usuario" placeholder="Usuario">
+								
+								<input type="password" placeholder="Contraseña" name="password">
+
+								<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
+								
+								<input type="number" name="documento" placeholder="Numero de documento">
+
+								<input type="file" name="fotoDePerfi" placeholder="" style="background-color: rgb(255, 255, 255);">
+
+								<button type="submit" title="Ingresar" name="Ingresar">Registrarme</button>
+
+							</form>
+							<div style="display: flex; flex-direction: row;">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 20px; height: 20px; margin-left: 0%; margin-right: 1%; ">
+							<label class="form-check-label" for="exampleCheck1" style="margin-top: 0.8%;">Recordarme</label>
+							</div>
+						</div>
+						<div class="inferior">
+							<a href="#">Volver</a>
+						</div>
+					</div>
+				</div>
 			</h2>
 
 
