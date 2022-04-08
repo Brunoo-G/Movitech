@@ -620,6 +620,7 @@ textarea.form-input {
   width: 100%;
   height: 40px;
   border: none;
+  font-weight: bold;
   
   border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
@@ -659,10 +660,15 @@ textarea.form-input {
 }
 
 .inferior a {
-  display: block;
   text-decoration: none;
-  color: #bbe1fa;
-  margin-bottom: 3px;
+  color: #000000;
+  margin-bottom: 0px;
+  font-size: 15px;
+  background-color: #00FCA8;
+  border-radius: 8%;
+  width: 15%;
+  padding: 1%;
+  font-family: 'Overpass', sans-serif;
 }
 
 .inferior a:hover {
