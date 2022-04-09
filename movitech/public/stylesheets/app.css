@@ -29,7 +29,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: #cdcdcd;
 }
 
 ul,
@@ -663,7 +663,7 @@ textarea.form-input {
   text-decoration: none;
   color: #000000;
   margin-bottom: 0px;
-  font-size: 15px;
+  font-size: 16.5px;
   background-color: #00FCA8;
   border-radius: 8%;
   width: 15%;
