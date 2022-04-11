@@ -2,7 +2,7 @@ var data = require("../db/index")
 
 const controller = {
     profile: function(req, res) {
-        res.render('profile', { perfil: data.usuario});
+        res.render('profile', { data: data.productos, perfil:data.usuario});
     },
 
     profileEdit: function(req, res) {

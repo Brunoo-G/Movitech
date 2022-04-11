@@ -45,7 +45,7 @@ let data = {
         color: 'black',
         id: '1',},
 
-        {imagen:'/images/productos/MotoG50' , 
+        {imagen:'/images/productos/MotoG50.jpg' , 
         nombre:'Moto G50' , 
         descripcion:'Smartphone Motorola Moto G50 5G: Procesador Qualcomm Snapdragon 480 (hasta 2.00 GHz), Memoria RAM de 4GB, Almacenamiento de 128GB, Pantalla LED Multi Touch de 6.5" HD+, Bluetooth 5.0, Wi-Fi, Cámara Principal de 48MP, Android 11.' , 
         fechaCarga:'22/04/19', 

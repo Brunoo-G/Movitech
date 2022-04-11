@@ -674,3 +674,8 @@ textarea.form-input {
 .inferior a:hover {
   color: #3282b8;
 }
+
+.foto {
+  height: 224px;
+  width: 224px;
+}
