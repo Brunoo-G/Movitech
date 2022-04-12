@@ -9,8 +9,4 @@ const controller = {
             res.render('profile-edit', { perfil: data.usuario});
         }
     }
-
-
-
-
 module.exports = controller;

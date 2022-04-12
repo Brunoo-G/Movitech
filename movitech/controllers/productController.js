@@ -12,7 +12,9 @@ const controller = {
     productDetail: function(req, res, next) {
         res.render('product' , { data: data.productos[req.params.id]});
     },
-
+    productComments: function (req, res, next) {
+        res.render('product', { data: data.comentarios});
+    },
 }
 
 module.exports = controller;
