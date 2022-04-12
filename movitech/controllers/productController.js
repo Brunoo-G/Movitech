@@ -10,10 +10,10 @@ const controller = {
         res.render('product-add');
     },
     productDetail: function(req, res, next) {
-        res.render('product' , { data: data.productos[req.params.id]});
+        res.render('product' , {data: data.productos[req.params.id], comentarios: data.comentarios, especifico: data.productos});
     },
     productComments: function (req, res, next) {
-        res.render('product', { data: data.comentarios});
+        res.render('product', );
     },
 }
 
