@@ -32,7 +32,7 @@ let data = {
 
     productos: [
         {imagen:'/images/productos/A52.jpg' , 
-        nombre:'A52' , 
+        nombre:'Samsung A52' , 
         descripcion:'Smartphone Samsung Galaxy A52: Procesador Snapdragon 720G Octa Core (hasta 2.3 GHz), Memoria RAM de 8GB, Almacenamiento de 128GB, Pantalla Super AMOLED de 6.3" FHD+, Red, Bluetooth, Wi-Fi, Cámara principal de 64MP, Android 11.' , 
         fechaCarga:'02/11/21' ,
         color: 'black',

@@ -10,10 +10,7 @@ const controller = {
         res.render('product-add');
     },
     productDetail: function(req, res, next) {
-        res.render('product' , {data: data.productos[req.params.id], comentarios: data.comentarios, especifico: data.productos});
-    },
-    productComments: function (req, res, next) {
-        res.render('product', );
+        res.render('product' , {data: data.productos[req.params.id], comentarios: data.comentarios, soloproductos: data.productos});
     },
 }
 
