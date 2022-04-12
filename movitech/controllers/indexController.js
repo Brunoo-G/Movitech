@@ -1,5 +1,6 @@
 const  data   = require("../db/index");
-var products = require("../db/index")
+var products = require("../db/index");
+const { search } = require("../routes");
 
 const controller = {
     index: function(req, res, next) {
@@ -10,6 +11,9 @@ const controller = {
     },
     register: function(req, res, next) {
         res.render('register');
+    },
+    searchResults: function(req, res,next){
+        res.render('search-results');
     }
 };
 
