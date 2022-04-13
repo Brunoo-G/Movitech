@@ -7,7 +7,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> Samsung A52</h2> 
+			<h2 class="products-title"> <%= data.nombre %></h2> 
 			<p class="product-detail-description">
 				<a href="/products/agregarProducto">Editar</a>
 			</p>
@@ -15,9 +15,8 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/productos/A52.jpg" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						Smartphone Samsung Galaxy A52: Procesador Snapdragon 720G Octa Core (hasta 2.3 GHz), Memoria RAM de 8GB, Almacenamiento de 128GB, Pantalla Super AMOLED de 6.3" FHD+, Red, Bluetooth, Wi-Fi, Cámara principal de 64MP, Android 11.</p>
+					<img src="<%= data.imagen %>" alt="" class="product-detail-img">
+					<p class="product-detail-description"><%= data.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<% for (let i = 0; i < comentarios.length; i++) { %>
@@ -33,7 +32,7 @@
 						</section>
 					<% } %>
 					
-					<form class="form" action="" method="POST">
+					<form class="form" action="" method="get">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
