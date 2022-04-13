@@ -300,6 +300,12 @@ hr {
   padding: 15px 0;
 }
 
+.footer-inferior{
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  color:#474747;
+}
 
 /*====== Product Detail ======*/
 .product-detail {
