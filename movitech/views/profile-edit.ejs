@@ -1,53 +1,48 @@
-<!DOCTYPE html>
-<html lang="es">
 <!-- Include Head -->
-
 <%- include('./partials/headerLogueado.ejs') %> 
 
-<body>
-	
+	<body>
+		<div class="container products-wrapper">
+			<div class="row">
+				<!-- Formulario para editar perfil -->
+				<h2> 
+					<div id="contenedor" style="width: 950px;">
+						<div id="central">
+							<div id="login" style="padding: 30px 45px; margin-top: 0%;">
+								<div class="titulo">
+									Editar mi perfil
+								</div>
+								<form method="get" action="/users/profile" id="loginform">
+									<input  type="text" name="email" placeholder="Email">
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<!-- Show the "ultimos" products -->
-			<h2> 
-				<div id="contenedor" style="width: 950px;">
-					<div id="central">
-						<div id="login" style="padding: 30px 45px; margin-top: 0%;">
-							<div class="titulo">
-								Editar mi perfil
+									<input type="text" name="usuario" placeholder="Usuario">
+									
+									<input type="password" placeholder="Contraseña" name="password">
+
+									<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
+									
+									<input type="number" name="documento" placeholder="Numero de documento">
+									
+									<a style="color:white">Foto de perfil</a>
+									<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
+									padding: 7.2px;">
+
+									<button type="submit" title="Guardar Cambios" name="Guardar Cambios">Guardar cambios</button>
+
+								</form>
 							</div>
-							<form method="get" action="/users/profile" id="loginform">
-								<input  type="text" name="email" placeholder="Email">
-
-								<input type="text" name="usuario" placeholder="Usuario">
-								
-								<input type="password" placeholder="Contraseña" name="password">
-
-								<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
-								
-								<input type="number" name="documento" placeholder="Numero de documento">
-								
-								<a style="color:white">Foto de perfil</a>
-								<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
-								padding: 7.2px;">
-
-								<button type="submit" title="Guardar Cambios" name="Guardar Cambios">Guardar cambios</button>
-
-							</form>
-						</div>
-						<div class="inferior">
-							<a style="width: 25%;" href="/">Volver al inicio</a>
+							<div class="inferior">
+								<a style="width: 25%;" href="/">Volver al inicio</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			</h2>
+				</h2>
+				<!-- Formulario para editar perfil -->
 
-
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
-
+				<!-- footer -->
+				<%- include('./partials/footer.ejs') %> 
+				<!-- /footer -->
+			</div>
+		</div>
+	</body>
 </html>

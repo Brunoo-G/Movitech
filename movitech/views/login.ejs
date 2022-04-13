@@ -1,65 +1,49 @@
-<!DOCTYPE html>
-<html lang="es">
+<!-- Include Head -->
 <%- include('./partials/header.ejs') %>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+	<body>
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
 
-	<title> Mercado Liebre Argentina</title>
-	<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
-</head>
+				<!-- Formulario Inicio de sesion -->
+				<h2>			  
+					<div id="contenedor">
+						<div id="central">
+							<div id="login">
+								<div class="titulo">
+									Bienvenido
+								</div>
+								<form method="get" action="/users/profile" id="loginform">
+									<input type="text" name="usuario" placeholder="Usuario">
+									
+									<input type="password" placeholder="Contraseña" name="password">
+									
+									<button type="submit" title="Ingresar" name="Ingresar">Ingresar</button>
 
-<body>
-	
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-
-			<!-- Show the "ultimos" products -->
-			
-			<h2>			  
-				<div id="contenedor">
-					<div id="central">
-						<div id="login">
-							<div class="titulo">
-								Bienvenido
-							</div>
-							<form method="get" action="/users/profile" id="loginform">
-								<input type="text" name="usuario" placeholder="Usuario">
+								</form>
+								<div style="display: flex; flex-direction: row;">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 20px; height: 20px; margin-left: 0%; margin-right: 1%; ">
+								<label class="form-check-label" for="exampleCheck1" style="margin-top: 0.8%;">Recordarme</label>
+								</div>
 								
-								<input type="password" placeholder="Contraseña" name="password">
-								
-								<button type="submit" title="Ingresar" name="Ingresar">Ingresar</button>
-
-							</form>
-							<div style="display: flex; flex-direction: row;">
-							<input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 20px; height: 20px; margin-left: 0%; margin-right: 1%; ">
-							<label class="form-check-label" for="exampleCheck1" style="margin-top: 0.8%;">Recordarme</label>
+								<div class="pie-form">
+									<a href="#">¿Olvidaste tu contraseña?</a>
+									<a href="register">¿No tienes Cuenta? Registrate</a>
+								</div>
 							</div>
-							
-							<div class="pie-form">
-								<a href="#">¿Olvidaste tu contraseña?</a>
-								<a href="register">¿No tienes Cuenta? Registrate</a>
+							<div class="inferior">
+								<a href="/">Volver</a>
 							</div>
-						</div>
-						<div class="inferior">
-							<a href="/">Volver</a>
 						</div>
 					</div>
-				</div>
-			</h2>
+				</h2>
+				<!-- Formulario Inicio de sesion -->
 
-
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
-
+				<!-- footer -->
+				<%- include('./partials/footer.ejs') %> 
+				<!-- /footer -->
+			</div>
+		</div>
+	</body>
 </html>

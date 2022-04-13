@@ -1,59 +1,53 @@
-<!DOCTYPE html>
-<html lang="es">
 <!-- Include Head -->
-
 <%- include('./partials/header.ejs') %> 
 
-<body>
-	
+	<body>
+		<div class="container products-wrapper">
+			<div class="row">	
+				<!-- Formulario de Registro a la web -->
+					<h2>
+						<div id="contenedor" style="width: 950px;">
+							<div id="central">
+								<div id="login" style="padding: 30px 45px; margin-top: 0%;">
+									<div class="titulo">
+										Crea tu cuenta
+									</div>
+									<form method="get" action="/users/profile" id="loginform">
+										<input  type="text" name="email" placeholder="Email">
 
+										<input type="text" name="usuario" placeholder="Usuario">
+										
+										<input type="password" placeholder="Contraseña" name="password">
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-		
-			<!-- Show the "ultimos" products -->
-			<h2>
-				<div id="contenedor" style="width: 950px;">
-					<div id="central">
-						<div id="login" style="padding: 30px 45px; margin-top: 0%;">
-							<div class="titulo">
-								Crea tu cuenta
-							</div>
-							<form method="get" action="/users/profile" id="loginform">
-								<input  type="text" name="email" placeholder="Email">
+										<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
+										
+										<input type="number" name="documento" placeholder="Numero de documento">
+										
+										<a style="color:white">Foto de perfil</a>
+										<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
+										padding: 7.2px;">
 
-								<input type="text" name="usuario" placeholder="Usuario">
-								
-								<input type="password" placeholder="Contraseña" name="password">
+										<button type="submit" title="Ingresar" name="Ingresar">Registrarme</button>
 
-								<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
-								
-								<input type="number" name="documento" placeholder="Numero de documento">
-								
-								<a style="color:white">Foto de perfil</a>
-								<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
-								padding: 7.2px;">
-
-								<button type="submit" title="Ingresar" name="Ingresar">Registrarme</button>
-
-							</form>
-							<div style="display: flex; flex-direction: row;">
-							<input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 20px; height: 20px; margin-left: 0%; margin-right: 1%; ">
-							<label class="form-check-label" for="exampleCheck1" style="margin-top: 0.8%;">Recordarme</label>
+									</form>
+									<div style="display: flex; flex-direction: row;">
+									<input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 20px; height: 20px; margin-left: 0%; margin-right: 1%; ">
+									<label class="form-check-label" for="exampleCheck1" style="margin-top: 0.8%;">Recordarme</label>
+									</div>
+								</div>
+								<div class="inferior">
+									<a href="/">Volver</a>
+								</div>
 							</div>
 						</div>
-						<div class="inferior">
-							<a href="/">Volver</a>
-						</div>
-					</div>
-				</div>
-			</h2>
+					</h2>
+				<!-- Formulario de Registro a la web -->
 
-
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
+				<!-- footer -->
+				<%- include('./partials/footer.ejs') %> 
+				<!-- /footer -->
+			</div>
+		</div>
+	</body>
 
 </html>
