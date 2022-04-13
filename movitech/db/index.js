@@ -39,7 +39,7 @@ let data = {
         id: '0',},
 
         {imagen:'/images/productos/Redmi10.jpg' , 
-        nombre:'Redmi10' , 
+        nombre:'Redmi 10' , 
         descripcion:'Smartphone Xiaomi Redmi Note 10 5G: Procesador MediaTek Dimensity 700 (hasta 2.20 GHz) Memoria RAM de 6GB, Almacenamiento de 128GB, Pantalla LED Multi Touch de 6.5" FHD+, Bluetooth 5.1, Wi-Fi 5, Cámara Principal de 48MP, Android 11.' , 
         fechaCarga:'05/06/20',
         color: 'black',
