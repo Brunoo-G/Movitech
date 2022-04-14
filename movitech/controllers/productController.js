@@ -7,10 +7,10 @@ const controller = {
         res.render('index', { data: data.productos});
     },
     productAdd: function(req, res, next) {
-        res.render('product-add');
+        res.render('product-add', { perfil: data.usuario});
     },
     productDetail: function(req, res, next) {
-        res.render('product' , {data: data.productos[req.params.id], comentarios: data.comentarios, soloproductos: data.productos});
+        res.render('product' , {data: data.productos[req.params.id], comentarios: data.comentarios});
     },
 }
 
