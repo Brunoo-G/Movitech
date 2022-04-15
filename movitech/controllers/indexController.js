@@ -1,6 +1,4 @@
 const  data   = require("../db/index");
-var products = require("../db/index");
-const { search } = require("../routes");
 
 const controller = {
     index: function(req, res, next) {

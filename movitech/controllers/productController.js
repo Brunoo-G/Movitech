@@ -1,6 +1,5 @@
-const { productos } = require("../db/index");
 const  data   = require("../db/index");
-var products = require("../db/index")
+
 
 const controller = {
     index: function(req, res, next) {
