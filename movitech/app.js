@@ -7,8 +7,15 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+const session = require('express-session');
 
 var app = express();
+
+app.use(session({
+  secret: 'a_secret_word',
+  resave: false,
+  saveUninitialized: true
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
