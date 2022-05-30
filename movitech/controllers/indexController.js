@@ -5,7 +5,7 @@ const controller = {
     index: function(req, res, next) {
         db.Producto.findAll()
         .then(function(data){
-             res.render('index', { data: data})
+            res.render('index', { data: data})
         })
         .catch(function(error){
             console.log(error)

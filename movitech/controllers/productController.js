@@ -1,8 +1,15 @@
-const  data   = require("../db/index");
+const db = require("../database/models");
+const data = require("../db/index");
 
 const controller = {
     index: function(req, res, next) {
-        res.render('index', { data: data.productos});
+        db.Producto.findAll()
+        .then(function(data){
+            res.render('index', { data: data});
+        })
+        .catch(function(error){
+            console.log(error)
+        })     
     },
     productAdd: function(req, res, next) {
         res.render('product-add', { perfil: data.usuario});
