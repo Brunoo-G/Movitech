@@ -12,19 +12,19 @@
 									<div class="titulo">
 										Crea tu cuenta
 									</div>
-									<form method="get" action="/users/profile" id="loginform">
+									<form method="post"  id="loginform">
 										<input  type="text" name="email" placeholder="Email">
 
-										<input type="text" name="usuario" placeholder="Usuario">
+										<input type="text" name="nombre" placeholder="Usuario">
 										
-										<input type="password" placeholder="Contraseña" name="password">
+										<input type="password" name="contraseña" placeholder="Contraseña">
 
-										<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
+										<input type="date" name="nacimiento" placeholder="Fecha de Nacimiento">
 										
 										<input type="number" name="documento" placeholder="Numero de documento">
 										
 										<a style="color:white">Foto de perfil</a>
-										<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
+										<input type="file" name="foto" style="background-color: rgb(205 205 205);
 										padding: 7.2px;">
 
 										<button type="submit" title="Ingresar" name="Ingresar">Registrarme</button>

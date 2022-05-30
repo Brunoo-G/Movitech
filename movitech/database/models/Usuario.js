@@ -10,6 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         contraseña: { type: dataTypes.INTEGER },
         nacimiento: { type: dataTypes.DATE },
         documento: { type: dataTypes.INTEGER },
+        foto: { type: dataTypes.STRING },
     }
 
     const configs = {
