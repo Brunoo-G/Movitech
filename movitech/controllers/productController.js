@@ -1,5 +1,6 @@
 
 const db = require("../database/models");
+const otro = require("../db/index")
 
 const controller = {
     index: function(req, res, next) {
