@@ -17,14 +17,14 @@
 						<p class="product-detail-description"><%= data.descripcion %></p>
 					</article>
 					<div class="col-12 col-lg-4">
-						<% for (let i = 0; i < comentarios.length; i++) { %>
+						<% for (let i = 0; i < data.comentarios.length; i++) { %>
 							<section class="comments">
 								<article>
-									<img src="<%= comentarios[i].imagen %>" alt="">
+									<img src="<%= data.comentarios[i].imagen %>" alt="">
 									<div class="data">
 										<p class="user">
-										<strong> <a href="/users/profile"><%= comentarios[i].nombre+':' %></a> </strong>
-										<%= comentarios[i].texto %></p>
+										<strong> <a href="/users/profile"><%= data.comentarios[i].nombre+':' %></a> </strong>
+										<%= data.comentarios[i].texto %></p>
 									</div>
 								</article>
 							</section>
