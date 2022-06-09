@@ -1,5 +1,4 @@
 const db = require("../database/models");
-const data = require("../db/index");
 
 const controller = {
     index: function(req, res, next) {
@@ -12,7 +11,7 @@ const controller = {
         })     
     },
     productAdd: function(req, res, next) {
-        res.render('product-add', { perfil: data.usuario});
+        res.render('product-add', { perfil: db.Usuario});
     },
     productDetail: function(req, res, next) {
         res.render('product' , { data: data.productos[req.params.id], comentarios: data.comentarios});

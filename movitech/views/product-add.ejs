@@ -13,15 +13,17 @@
 									<div class="titulo">
 										Agregar productos
 									</div>
-									<form method="get" action="/products/agregarProducto" id="loginform">
-										<input  type="text" name="Nombre del producto" placeholder="Nombre del producto">
+									<form method="post" action="/products/agregarProducto" id="loginform">
+										<input  type="text" name="nombre" placeholder="Nombre del producto">
 
-										<input type="number" name="fecha" placeholder="Fecha de Carga">	
+										<input type="date" name="fechaCarga" placeholder="Fecha de Carga">	
 										
-										<input type="text" name="Descripción" placeholder="Descripción">
+										<input type="text" name="descripcion" placeholder="Descripción">
+
+										<input type="text" name="color" placeholder="Color">
 
 										<a style="color:white">Fotos del producto</a>
-										<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
+										<input type="file" name="imagen" style="background-color: rgb(205 205 205);
 										padding: 7.2px;">
 	
 										<button type="submit" title="Ingresar" name="Ingresar">Subir producto</button>
