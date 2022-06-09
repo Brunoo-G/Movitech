@@ -1,3 +1,4 @@
+
 const db = require("../database/models");
 
 const controller = {
@@ -14,7 +15,19 @@ const controller = {
         res.render('product-add', { perfil: db.Usuario});
     },
     productDetail: function(req, res, next) {
-        res.render('product' , { data: data.productos[req.params.id], comentarios: data.comentarios});
+        let id = req.params.id ;
+        
+        let relaciones = {
+            include: {
+                all : true,
+                nested: true
+            }
+        }
+        db.Producto.findByPk(id ,relaciones)
+    
+        .then(function(data){
+            res.render('product' , { data: data , comentarios: otro.comentarios });
+        }) 
     },
 }
 
