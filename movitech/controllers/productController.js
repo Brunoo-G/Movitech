@@ -1,6 +1,4 @@
-
 const db = require("../database/models");
-const otro = require("../db/index")
 
 const controller = {
     index: function(req, res, next) {
@@ -27,8 +25,11 @@ const controller = {
         db.Producto.findByPk(id ,relaciones)
     
         .then(function(data){
-            res.render('product' , { data: data , comentarios: otro.comentarios });
+            res.render('product' , { data: data , comentarios: db.comentarios });
         }) 
+        .catch(function(error){
+            console.log(error)
+        })  
     },
 }
 

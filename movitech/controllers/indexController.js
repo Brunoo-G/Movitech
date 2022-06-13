@@ -16,6 +16,33 @@ const controller = {
         res.render('login');
     },
 
+    access: function(req, res, next) {
+        console.log(req.body);
+        db.Usuario.findOne({where: {nombre: req.body.usuario}})
+        .then(function(user){
+            if (!user) throw Error("Usuario no existente")
+            if (hasher.compareSync(req.body.password, user.contraseña)) {
+                req.session.user = user;
+                if (req.body.exampleCheck1) {
+                    res.cookie("userId", user.id, {maxAge: 1000 * 60 * 60 * 24}) 
+                }
+                res.redirect("/");
+            } else {
+                throw Error ("Usuario o contraseña incorrectos")
+            }
+            
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+    },
+
+    logout: function(req, res, next) {
+        req.session.user = null;
+        res.clearCookie("userId");
+        res.redirect("/")
+    },
+
     register: function(req, res, next) {
         res.render('register');
     },
