@@ -5,7 +5,7 @@ const controller = {
     index: function(req, res, next) {
         db.Producto.findAll()
         .then(function(data){
-            res.render('index', { data: data})
+            res.render('index', {data: data})
         })
         .catch(function(error){
             console.log(error)
@@ -17,23 +17,22 @@ const controller = {
     },
 
     access: function(req, res, next) {
-        console.log(req.body);
         db.Usuario.findOne({where: {nombre: req.body.usuario}})
         .then(function(user){
+            console.log(user)
             if (!user) throw Error("Usuario no existente")
             if (hasher.compareSync(req.body.password, user.contraseña)) {
-                req.session.user = user;
-                if (req.body.exampleCheck1) {
-                    res.cookie("userId", user.id, {maxAge: 1000 * 60 * 60 * 24}) 
+                req.session.user = user.dataValues;
+                if (!req.body.recordarUsuario) {
+                    res.cookie( 'userId' , user.dataValues.id, {maxAge: 1000 * 60 * 60 * 7}) 
                 }
                 res.redirect("/");
             } else {
                 throw Error ("Usuario o contraseña incorrectos")
             }
-            
         })
         .catch(function(error){
-            console.log(error)
+            next(error)
         })
     },
 

@@ -13,7 +13,7 @@ const controller = {
 
         db.Usuario.findByPk(id, relaciones)
         .then(function(perfil){
-            res.render('profile', { perfil});
+            res.render('profile', { perfil });
         }) 
         .catch(function(error){
             console.log(error)
@@ -21,8 +21,8 @@ const controller = {
     
     },
 
-    profileEdit: function(req, res) {
-        db.Usuario.findByPk(iddelusuariologueado)
+    profileEdit: function(req, res, next) {
+        db.Usuario.findByPk(2)
         .then(function(data){
             res.render('profile-edit', { perfil: db.usuario});
         }) 
