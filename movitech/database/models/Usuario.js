@@ -11,6 +11,8 @@ module.exports = function (sequelize, dataTypes) {
         nacimiento: { type: dataTypes.DATE },
         documento: { type: dataTypes.INTEGER },
         foto: { type: dataTypes.STRING },
+        created_at: { type: dataTypes.DATE },
+        updated_at: { type: dataTypes.DATE },
     }
 
     const configs = {

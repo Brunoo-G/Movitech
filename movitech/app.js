@@ -18,6 +18,11 @@ app.use(session({
   saveUninitialized: true
 }))
 
+app.use(function(req, res, next){
+  res.locals.user = req.session.user;
+  next();
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

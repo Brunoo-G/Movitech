@@ -22,7 +22,7 @@ const controller = {
     },
 
     profileEdit: function(req, res) {
-        db.Usuario.findByPk(iddelusuariologueado)
+        db.Usuario.findByPk(req.session.user.id)
         .then(function(data){
             res.render('profile-edit', { perfil: db.usuario});
         }) 

@@ -1,4 +1,10 @@
-<%- include('./partials/header.ejs') %> 
+<% if (!locals.user) {%>
+	<%- include('./partials/header.ejs') %> 
+<%-  } %>
+<%- else (locals.user) {%>
+	<%- include('./partials/headerLogueado.ejs') %> 
+<%  } %>
+
 <!-- Include Head -->
 
 	<body>

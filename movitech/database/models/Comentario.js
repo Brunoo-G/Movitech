@@ -10,6 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         imagen: { type: dataTypes.STRING },
         usuario_id: { type: dataTypes.INTEGER },
         producto_id: { type: dataTypes.INTEGER },
+        created_at: { type: dataTypes.DATE },
     }
 
     const configs = {
