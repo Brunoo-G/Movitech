@@ -5,7 +5,7 @@ const controller = {
     index: function(req, res, next) {
         db.Producto.findAll()
         .then(function(data){
-            res.render('index', { data: data})
+            res.render('index', {data: data})
         })
         .catch(function(error){
             console.log(error)
@@ -17,23 +17,22 @@ const controller = {
     },
 
     access: function(req, res, next) {
-        console.log(req.body);
         db.Usuario.findOne({where: {nombre: req.body.usuario}})
         .then(function(user){
+            console.log(user)
             if (!user) throw Error("Usuario no existente")
             if (hasher.compareSync(req.body.password, user.contraseña)) {
-                req.session.user = user;
-                if (req.body.exampleCheck1) {
-                    res.cookie("userId", user.id, {maxAge: 1000 * 60 * 60 * 24}) 
+                req.session.user = user.dataValues;
+                if (!req.body.recordarUsuario) {
+                    res.cookie( 'userId' , user.dataValues.id, {maxAge: 1000 * 60 * 60 * 7}) 
                 }
                 res.redirect("/");
             } else {
                 throw Error ("Usuario o contraseña incorrectos")
             }
-            
         })
         .catch(function(error){
-            console.log(error)
+            next(error)
         })
     },
 
@@ -48,7 +47,7 @@ const controller = {
     },
 
     store: function(req, res, next) {
-        if (!req.body.email) { throw Error('Email ingresado no existente.') }
+        if (!req.body.email) { throw Error('ingresar existente.') }
         const hashedPassword = hasher.hashSync(req.body.contraseña, 10);
         db.Usuario.create({
                 email: req.body.email,
@@ -56,7 +55,7 @@ const controller = {
                 contraseña: hashedPassword,
                 nacimiento: req.body.nacimiento,
                 documento: req.body.documento,
-                foto: req.body.foto,
+                foto: req.body.fotoDePerfi = (req.file.path).replace('public', '')
             })
             .then(function () {
                 res.redirect('/');

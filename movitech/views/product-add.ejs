@@ -13,7 +13,7 @@
 									<div class="titulo">
 										Agregar productos
 									</div>
-									<form method="post" action="/products/agregarProducto" id="loginform">
+									<form method="post" action="/products/agregarProducto" id="loginform" enctype="multipart/form-data">
 										<input  type="text" name="nombre" placeholder="Nombre del producto">
 
 										<input type="date" name="fechaCarga" placeholder="Fecha de Carga">	
@@ -23,7 +23,7 @@
 										<input type="text" name="color" placeholder="Color">
 
 										<a style="color:white">Fotos del producto</a>
-										<input type="file" name="imagen" style="background-color: rgb(205 205 205);
+										<input type="file" name="imagenDeProducto" style="background-color: rgb(205 205 205);
 										padding: 7.2px;">
 	
 										<button type="submit" title="Ingresar" name="Ingresar">Subir producto</button>

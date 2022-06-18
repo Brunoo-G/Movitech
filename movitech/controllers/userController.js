@@ -13,7 +13,7 @@ const controller = {
 
         db.Usuario.findByPk(id, relaciones)
         .then(function(perfil){
-            res.render('profile', { perfil});
+            res.render('profile', { perfil });
         }) 
         .catch(function(error){
             console.log(error)
@@ -21,16 +21,28 @@ const controller = {
     
     },
 
-    profileEdit: function(req, res) {
+    profileEdit: function(req, res, next) {
         db.Usuario.findByPk(req.session.user.id)
-        .then(function(data){
-            res.render('profile-edit', { perfil: db.usuario});
+        .then(function(perfil){
+            res.render('profile-edit', { perfil });
         }) 
         .catch(function(error){
             console.log(error)
         })  
            
-        }
-    }
+    },
+
+    // todavia no funciona
+    update: function(req, res) {
+        if (req.file) req.body.fotoDePerfi = (req.file.path).replace('public', '');
+        db.Producto.update(req.body, { where: { id: req.params.id } })
+            .then(function() {
+                res.redirect('/user/profile')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
+}
     
 module.exports = controller;

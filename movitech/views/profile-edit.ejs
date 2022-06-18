@@ -12,22 +12,22 @@
 								<div class="titulo">
 									Editar mi perfil
 								</div>
-								<form method="get" action="/users/profile" id="loginform">
-									<input  type="text" name="email" placeholder="Email">
+								<form method="post" action="/users/profile" id="loginform" enctype="multipart/form-data">
+									<input  type="text" name="email" placeholder="<%= perfil.email %>">
 
-									<input type="text" name="usuario" placeholder="Usuario">
+									<input type="text" name="usuario" placeholder="<%= perfil.nombre %>">
 									
-									<input type="password" placeholder="Contraseña" name="password">
+									<input type="password" placeholder="Contraseña" name="<%= perfil.contraseña %>">
 
-									<input type="number" name="fecha" placeholder="Fecha de Nacimiento">
+									<input type="date" name="nacimiento" placeholder="<%= perfil.nacimiento %>">
 									
-									<input type="number" name="documento" placeholder="Numero de documento">
+									<input type="number" name="documento" placeholder="<%= perfil.documento %>">
 									
 									<a style="color:white">Foto de perfil</a>
 									<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);
 									padding: 7.2px;">
 
-									<button type="submit" title="Guardar Cambios" name="Guardar Cambios">Guardar cambios</button>
+									<button type="submit" title="GuardarCambios" name="GuardarCambios">Guardar cambios</button>
 
 								</form>
 							</div>
