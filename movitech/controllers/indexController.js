@@ -47,7 +47,7 @@ const controller = {
     },
 
     store: function(req, res, next) {
-        if (!req.body.email) { throw Error('Email ingresado no existente.') }
+        if (!req.body.email) { throw Error('ingresar existente.') }
         const hashedPassword = hasher.hashSync(req.body.contraseña, 10);
         db.Usuario.create({
                 email: req.body.email,
@@ -55,7 +55,7 @@ const controller = {
                 contraseña: hashedPassword,
                 nacimiento: req.body.nacimiento,
                 documento: req.body.documento,
-                foto: req.body.foto,
+                foto: req.body.fotoDePerfi = (req.file.path).replace('public', '')
             })
             .then(function () {
                 res.redirect('/');
