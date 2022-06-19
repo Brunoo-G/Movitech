@@ -9,8 +9,27 @@
 					<h2 class="products-title">Resultados de búsqueda</h2>
 				</div>
 				<!-- Show the "ultimos" products -->
-				<h2 class="col-12"> <br> No encontramos ningún resultado para su búsqueda, por favor lea bien nuestro catálogo de productos. Ante cualquier problema no dude en comunicarse con nosotros! <br></h2>
+            </div>
+        </div>
 
+		<% for( let i = 0; i < resultados.length; i++ ) { %> 
+
+		<div class="col-12 col-sm-6 col-lg-3">
+			<section class="product-box">
+				<a href="/products/<%= resultados[i].id %>"> 
+					<figure class="product-box_image">
+						<img src="<%= resultados[i].imagen %>" alt="<%= resultados[i].nombre %>">
+					</figure>
+					<article class="product-box_data">
+						<h2><%= resultados[i].nombre %></h2>
+						<p><%= resultados[i].descripcion %></p>
+						<p> Comentarios: </p>
+					</article>
+				</a>
+			</section>
+		</div>
+
+		<% } %> 
 
 		<!-- footer -->
 		<%- include('./partials/footer.ejs') %> 
