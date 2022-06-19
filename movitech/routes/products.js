@@ -11,5 +11,6 @@ router.get('/agregarProducto', controller.productAdd);
 router.post('/agregarProducto', upload.single('imagenDeProducto'), controller.store);
 
 router.get('/:id', controller.productDetail);
+router.post('/:id', controller.comment);
 
 module.exports = router;

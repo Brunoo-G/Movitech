@@ -2,9 +2,9 @@ const db = require("../database/models");
 
 const controller = {
     index: function(req, res, next) {
-        db.Producto.findAll()
+        db.Producto.findAll({ include:  {all:true, nested: false }}) 
         .then(function(data){
-            res.render('index', { data: data});
+            res.render('index', { data});
         })
         .catch(function(error){
             console.log(error)
@@ -40,14 +40,28 @@ const controller = {
                 nested: true
             }
         }
-        db.Producto.findByPk(id ,relaciones)
-    
+        db.Producto.findByPk(id , relaciones)
         .then(function(data){
-            res.render('product' , { data: data , comentarios: db.comentarios });
+            res.render('product' , { data });
         }) 
         .catch(function(error){
             console.log(error)
         })  
+    },
+    // esto no funciona
+    comment: function (req, res, next) {
+        if (req.body.usuario_id = req.session.user.id) {
+            db.Comentario.create({
+                nombre: req.session.user.nombre,
+                texto: req.body.comentario,
+                imagen: req.session.user.foto,
+                usuario_id: req.body.usuario_id,
+                producto_id: req.body.id
+            })
+            .then(function(comentario) {
+                redirect('/products/:id')
+            })
+        }
     },
 }
 
