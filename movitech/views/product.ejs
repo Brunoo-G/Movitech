@@ -22,15 +22,22 @@
 						<% for (let i = 0; i < data.comentarios.length; i++) { %>
 							<section class="comments">
 								<article>
-									<img src="<%= data.comentarios[i].imagen %>" alt="">
+									<img src="<%= data.comentarios[i].usuario.foto %>" alt="">
 									<div class="data">
 										<p class="user">
-										<strong> <a href="/users/profile"><%= data.comentarios[i].nombre+':' %></a> </strong>
+										<strong> <a href="/users/profile"><%= data.comentarios[i].usuario.nombre +':' %></a> </strong>
 										<%= data.comentarios[i].texto %></p>
 									</div>
 								</article>
 							</section>
 						<% } %>
+						<% if (locals.user && locals.user.id == data.usuario_id) { %>
+							<a class="btn btn-primary" href="/products/<%= data.usuario_id %>/edit">Edit</a>
+							<form action="/products/<%= data.usuario_id %>/delete" method="post">
+							  <input class="btn btn-danger" type="submit" value="Borrar">
+							</form>
+						  <% } else { %>
+						  <% } %>
 						
 						<form class="form" action="" method="get">
 							<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">

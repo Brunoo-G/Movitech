@@ -10,6 +10,10 @@ router.get('/', controller.index);
 router.get('/agregarProducto', controller.productAdd);
 router.post('/agregarProducto', upload.single('imagenDeProducto'), controller.store);
 
+
+
+router.post('/:id/delete', controller.delete);
+
 router.get('/:id', controller.productDetail);
 router.post('/:id', controller.comment);
 

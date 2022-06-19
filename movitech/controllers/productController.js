@@ -32,6 +32,29 @@ const controller = {
             })
     },
 
+    delete: function(req, res) {
+        if (!req.session.user) {
+            throw Error('Not authorized.')
+        }
+        db.Producto.destroy({ where: { id: req.params.id } })
+            .then(function() {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
+    
+    edit: function(req, res) {
+        db.Producto.findByPk(req.params.id)
+            .then(function (data) {
+                res.render('?', { data });
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+        },
+
     productDetail: function(req, res, next) {
         let id = req.params.id ;
         

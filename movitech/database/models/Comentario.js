@@ -5,9 +5,7 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        nombre: { type: dataTypes.STRING },
         texto: { type: dataTypes.STRING },
-        imagen: { type: dataTypes.STRING },
         usuario_id: { type: dataTypes.INTEGER },
         producto_id: { type: dataTypes.INTEGER },
         created_at: { type: dataTypes.DATE },
