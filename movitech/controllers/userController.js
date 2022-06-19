@@ -34,10 +34,11 @@ const controller = {
     },
 
     // todavia no funciona
+
     update: function(req, res) {
         if(req.body.usuario_id = req.session.user.id)
         if (req.file) req.body.fotoDePerfi = (req.file.path).replace('public', '');
-        db.Usuario.update(req.body, {where: {id: res.params.id}})
+        db.Usuario.update(req.body, {where: {id: req.params.id}})
         .then(function() {
             res.redirect('/user/profile')
         })

@@ -15,7 +15,8 @@ const controller = {
     },
 
     store: function(req, res) {
-       if(req.body.usuario_id = req.session.user.id) db.Producto.create({
+       if(req.body.usuario_id = req.session.user.id)
+        db.Producto.create({
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
         color: req.body.color,

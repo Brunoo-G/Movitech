@@ -3,7 +3,7 @@ const hasher = require("bcryptjs")
 
 const controller = {
     index: function(req, res, next) {
-        db.Producto.findAll()
+        db.Producto.findAll(z)
         .then(function(data){
             res.render('index', {data: data})
         })
