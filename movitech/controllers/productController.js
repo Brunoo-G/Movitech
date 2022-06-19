@@ -20,7 +20,8 @@ const controller = {
         descripcion: req.body.descripcion,
         color: req.body.color,
         fechaCarga: req.body.fechaCarga,
-        imagen: req.body.imagenDeProducto = (req.file.path).replace('public', '')
+        imagen: req.body.imagenDeProducto = (req.file.path).replace('public', ''),
+        usuario_id: req.body.usuario_id
        })
             .then(function() {
                 res.redirect('/')
