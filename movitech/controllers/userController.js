@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const hasher = require("bcryptjs")
 
 const controller = {
     profile: function(req, res) { 
@@ -34,14 +35,15 @@ const controller = {
 
     // todavia no funciona
     update: function(req, res) {
+        if(req.body.usuario_id = req.session.user.id)
         if (req.file) req.body.fotoDePerfi = (req.file.path).replace('public', '');
-        db.Producto.update(req.body, { where: { id: req.params.id } })
-            .then(function() {
-                res.redirect('/user/profile')
-            })
-            .catch(function(error) {
-                res.send(error);
-            })
+        db.Usuario.update(req.body, {where: {id: res.params.id}})
+        .then(function() {
+            res.redirect('/user/profile')
+        })
+        .catch(function(error) {
+            res.send(error);
+        })
     },
 }
     
