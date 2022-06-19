@@ -1,3 +1,4 @@
+const { text } = require("express");
 const db = require("../database/models");
 
 const controller = {
@@ -72,20 +73,25 @@ const controller = {
             console.log(error)
         })  
     },
+    
     // esto no funciona
     comment: function (req, res, next) {
-        if (req.body.usuario_id = req.session.user.id) {
-            db.Comentario.create({
-                nombre: req.session.user.nombre,
-                texto: req.body.comentario,
-                imagen: req.session.user.foto,
-                usuario_id: req.body.usuario_id,
-                producto_id: req.body.id
-            })
-            .then(function(comentario) {
-                redirect('/products/:id')
-            })
+        if (!req.session.user) { 
+            throw Error('Not authorized.')
         }
+        req.body.user_id = req.session.user.id;
+        req.body.producto_id = req.params.id;
+        db.Comentario.create({
+            texto: req.body.comentario,
+            usuario_id: req.body.user_id,
+            producto_id: req.body.producto_id,
+        })
+        .then(function() {
+            res.redirect('/products/' + req.params.id)
+            })
+        .catch(function(error) {
+            res.send(error);
+        })
     },
 }
 

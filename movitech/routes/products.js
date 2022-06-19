@@ -15,6 +15,6 @@ router.post('/agregarProducto', upload.single('imagenDeProducto'), controller.st
 router.post('/:id/delete', controller.delete);
 
 router.get('/:id', controller.productDetail);
-router.post('/:id', controller.comment);
+router.post('/:id/comentario', controller.comment);
 
 module.exports = router;
