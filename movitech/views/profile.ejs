@@ -39,7 +39,7 @@
 				<% for (let i = 0; i < perfil.productos.length; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
-							<a href="/products/<%= i %>">
+							<a href="/products/<%= perfil.productos[i].id %>">
 								<figure class="product-box_image">
 									<img class="foto" src="<%= perfil.productos[i].imagen %>" alt="<%= perfil.productos[i].nombre %>">
 								</figure>

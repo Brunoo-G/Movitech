@@ -173,10 +173,10 @@ hr {
 }
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 2.8em;
   font-weight: 400;
-  color: var(--gray);
-  margin-bottom: 0%;
+  color: var(#343232);
+  margin-bottom: 1%;
 }
 
 .product-box {
@@ -684,6 +684,12 @@ textarea.form-input {
   color: #3282b8;
 }
 
-.foto {
-  height: 265px;
+.resultados{
+  display: flex;
+  flex-direction: row;
+}
+
+.foto{
+  height: 262px;
+  width: 255px;
 }

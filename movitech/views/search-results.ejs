@@ -17,32 +17,33 @@
 	</div>
 
 	
+	<div class="resultados">
+		<% if(locals.erroresBuscador !== "undefined" ) { %> 
 
-	<% if(locals.erroresBuscador !== "undefined" ) { %> 
+			<div class="col-12 ">
+				<h2 class="mensajeError" style="color: red;"> <i class="fa-solid fa-circle-xmark"></i> No hay resultados para su criterio de busqueda</h2>
+			</div>
 
-		<div class="col-12 ">
-			<h2 class="mensajeError" style="color: red;"> <i class="fa-solid fa-circle-xmark"></i> No hay resultados para su criterio de busqueda</h2>
-		</div>
+			<% }  else { %>
 
-		<% }  else { %>
-
-		<% for (let i = 0; i < resultados.length; i++) { %>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/products/<%= resultados[i].id %>">
-						<figure class="product-box_image">
-							<img class="foto" src="<%= resultados[i].imagen %>" alt="<%= resultados[i].nombre %>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%= resultados[i].nombre %></h2>
-							<p><%= resultados[i].descripcion %></p>
-							<p>Comentarios: 5</p>
-						</article>
-					</a>
-				</section>
-			</div>	
+			<% for (let i = 0; i < resultados.length; i++) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/products/<%= resultados[i].id %>">
+							<figure class="product-box_image">
+								<img class="foto" src="<%= resultados[i].imagen %>" alt="<%= resultados[i].nombre %>">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= resultados[i].nombre %></h2>
+								<p><%= resultados[i].descripcion %></p>
+								<p>Comentarios: 5</p>
+							</article>
+						</a>
+					</section>
+				</div>	
+			<% } %>
 		<% } %>
-	<% } %>
+	</div>
 	<!-- footer -->
 	<%- include('./partials/footer.ejs') %> 
 	<!-- /footer -->
