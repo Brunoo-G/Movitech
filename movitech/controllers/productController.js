@@ -95,7 +95,7 @@ const controller = {
 
     comment: function (req, res, next) {
         if (!req.session.user) { 
-            throw Error('Not authorized.')
+            throw Error('no tienes autorización')
         }
         req.body.user_id = req.session.user.id;
         req.body.producto_id = req.params.id;
