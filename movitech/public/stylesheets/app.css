@@ -693,3 +693,9 @@ textarea.form-input {
   height: 262px;
   width: 255px;
 }
+
+.edicion{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 2%;
+}

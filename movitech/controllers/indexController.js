@@ -88,7 +88,7 @@ const controller = {
     },
 
     store: function(req, res, next) {
-        if (!req.body.email) { throw Error('ingresar existente.') }
+        if (!req.body.email) { throw Error('ingresar un email existente.') }
         const hashedPassword = hasher.hashSync(req.body.contraseña, 10);
         db.Usuario.create({
                 email: req.body.email,

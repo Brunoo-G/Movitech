@@ -10,10 +10,8 @@ router.get('/', controller.index);
 router.get('/agregarProducto', controller.productAdd);
 router.post('/agregarProducto', upload.single('imagenDeProducto'), controller.store);
 
-
-
 router.get('/:id/edit', controller.edit);
-router.post('/:id/edit', upload.single('imagenDeProducto'), controller.updateProduct);
+router.post('/:id/edit', upload.single('imagenProducto'), controller.updateProduct);
 
 router.post('/:id/delete', controller.delete);
 
