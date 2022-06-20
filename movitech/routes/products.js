@@ -12,6 +12,9 @@ router.post('/agregarProducto', upload.single('imagenDeProducto'), controller.st
 
 
 
+router.get('/:id/edit', controller.edit);
+router.post('/:id/edit', upload.single('imagenDeProducto'), controller.updateProduct);
+
 router.post('/:id/delete', controller.delete);
 
 router.get('/:id', controller.productDetail);

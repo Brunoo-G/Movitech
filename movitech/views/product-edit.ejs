@@ -11,20 +11,20 @@
 							<div id="central">
 								<div id="login" style="padding: 30px 45px; margin-top: 9%;">
 									<div class="titulo">
-										Agregar productos
+										Editar producto
 									</div>
-									<form method="post" action="/products/agregarProducto" id="loginform" enctype="multipart/form-data">
-										<input  type="text" name="nombre" placeholder="Nombre del producto">
+									<form method="post" action="/" id="loginform" enctype="multipart/form-data">
+										<input  type="text" name="nombre" placeholder="<%= data.nombre %>">	
 										
-										<input type="text" name="descripcion" placeholder="Descripción">
+										<input type="text" name="descripcion" placeholder="<%= data.descripcion %>">
 
-										<input type="text" name="color" placeholder="Color">
+										<input type="text" name="color" placeholder="<%= data.color %>">
 
 										<a style="color:white">Fotos del producto</a>
 										<input type="file" name="imagenDeProducto" style="background-color: rgb(205 205 205);
 										padding: 7.2px;">
 	
-										<button type="submit" title="Ingresar" name="Ingresar">Subir producto</button>
+										<button type="submit" title="Ingresar" name="Ingresar">Actualizar producto</button>
 	
 									</form>
 								</div>

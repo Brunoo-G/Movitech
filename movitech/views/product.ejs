@@ -32,8 +32,8 @@
 							</section>
 						<% } %>
 						<% if (locals.user && locals.user.id == data.usuario_id) { %>
-							<a class="btn btn-primary" href="/products/<%= data.usuario_id %>/edit">Edit</a>
-							<form action="/products/<%= data.usuario_id %>/delete" method="post">
+							<a class="btn btn-primary" href="/products/<%= data.id %>/edit">Edit</a>
+							<form action="/products/<%= data.id %>/delete" method="post">
 							  <input class="btn btn-danger" type="submit" value="Borrar">
 							</form>
 						  <% } else { %>

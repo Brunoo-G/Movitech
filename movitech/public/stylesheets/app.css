@@ -619,7 +619,7 @@ textarea.form-input {
 
 #login input::placeholder {
   font-family: 'Overpass', sans-serif;
-  color: #E4E4E4;
+  color: #8e8b8b;
 }
 
 #login button {

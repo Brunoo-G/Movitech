@@ -37,7 +37,7 @@ const controller = {
         if (!req.session.user) {
             throw Error('Not authorized.')
         }
-        db.Producto.destroy({ where: { id: req.params.id } })
+        db.Producto.destroy({ where: { id : req.params.id } })
             .then(function() {
                 res.redirect('/')
             })
@@ -45,16 +45,6 @@ const controller = {
                 res.send(error);
             })
     },
-    
-    edit: function(req, res) {
-        db.Producto.findByPk(req.params.id)
-            .then(function (data) {
-                res.render('?', { data });
-            })
-            .catch(function (error) {
-                res.send(error);
-            })
-        },
 
     productDetail: function(req, res, next) {
         let id = req.params.id ;
@@ -74,7 +64,35 @@ const controller = {
         })  
     },
     
-    // esto no funciona
+    edit: function(req, res) {
+
+        let relaciones = {
+            include: {
+                all : true,
+                nested: true
+            }
+        }
+        db.Producto.findByPk(req.params.id, relaciones)
+            .then(function (data) {
+                res.render('product-edit', { data });
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+        },
+
+    updateProduct: function(req, res) {
+        
+        if (req.file) req.body.imagenDeProducto = (req.file.path).replace('public', '');
+        db.Producto.update(req.body, { where: { id: req.params.id } })
+            .then(function() {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
+
     comment: function (req, res, next) {
         if (!req.session.user) { 
             throw Error('Not authorized.')
