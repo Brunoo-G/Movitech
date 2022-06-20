@@ -16,6 +16,6 @@ router.get('/logout', controller.logout);
 router.get('/register', controller.register);
 router.post('/register', upload.single('fotoDePerfi'), controller.store);
 
-router.get('/search-results', controller.searchResults);
+router.get('/search-results', controller.search);
 
 module.exports = router;

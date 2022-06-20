@@ -1,5 +1,7 @@
 const db = require("../database/models")
 const hasher = require("bcryptjs")
+const Productos = db.Producto; //Alias de la db
+const op = db.Sequelize.Op;
 
 const controller = {
     index: function(req, res, next) {
@@ -15,6 +17,40 @@ const controller = {
         .catch(function(error){
             console.log(error)
         })
+    },
+    search: function(req,res){  
+        let palabraBuscada = req.query.search; /* search es el input name del formulario de los headers*/ 
+        let promesaNombre = Productos.findAll({
+                                where:[{ nombre:{ [op.like]: `%${palabraBuscada}%`}}] 
+                             });
+        let promesaDescripcion = Productos.findAll({
+                        where:[{ descripcion:{ [op.like]: `%${palabraBuscada}%`}}]
+                    });
+        let erroresBuscador = {};
+        if(palabraBuscada == "") {
+            res.locals.erroresBuscador = erroresBuscador;
+            return res.render('search-results')
+        } else {  
+            Promise.all([promesaNombre, promesaDescripcion]) //Le paso como parametro promesaNombre y promesaDescripcion
+            .then(function([resNombre, resDescripcion]){
+                if (resNombre.length === 0 && resDescripcion.length === 0){
+                    res.locals.erroresBuscador = erroresBuscador;
+                    return res.render('search-results')
+                } 
+                res.locals.erroresBuscador = "undefined";
+                let arrDeResultados = [];
+                for (let i = 0; i < resNombre.length; i++) {
+                    arrDeResultados.push(resNombre[i])
+                } 
+               for (let i = 0; i < resDescripcion.length; i++) {
+                    arrDeResultados.push(resDescripcion[i])
+                } 
+                res.render('search-results', {
+                    resultados: arrDeResultados
+                })
+            })
+            .catch(err => console.log(err));
+        }
     },
 
     login: function(req, res, next) {
