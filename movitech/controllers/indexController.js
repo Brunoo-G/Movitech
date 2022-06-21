@@ -9,7 +9,8 @@ const controller = {
             order: [
                 ["updated_at", "DESC"]
             ],
-            limit: 8
+            limit: 8,
+            include: {all:true, nested:false},
         })
         .then(function(data){
             res.render('index', {data: data})
