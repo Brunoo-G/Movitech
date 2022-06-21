@@ -96,10 +96,13 @@ const controller = {
         res.render('register');
     },
 
-    store: function(req, res, next) {
+    store: async function(req, res, next) {
         try{
             if (!req.body.email) { throw Error('Debes ingresar un email existente') }
             if (!req.body.nombre) { throw Error('Debes ingresar un usuario') }
+            if (req.body.contraseña.length <= 3) { throw Error('La contraseña debe tener mas de 3 dígitos') }
+            const user = await db.Usuario.findOne({ where: {email: req.body.email} })
+            if(user) {throw Error ('Este email ya existe')}
         } catch(err) {
             res.render('register', {error: err.message});
             return;
