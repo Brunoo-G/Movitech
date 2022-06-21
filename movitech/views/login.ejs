@@ -14,6 +14,11 @@
 								<div class="titulo">
 									Bienvenido
 								</div>
+								<% if (locals.error) { %>
+									<div class="titulo" style="font-size: 120%; color: red;" role="alert">
+										¡<%= error %>!
+									</div>
+								<% } %> 
 								<form method="post" action="/login" id="loginform">
 									<input type="text" for="nombre" name="usuario" placeholder="Usuario">
 									

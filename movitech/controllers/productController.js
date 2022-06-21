@@ -12,6 +12,9 @@ const controller = {
         })     
     },
     productAdd: function(req, res, next) {
+        if(!req.session.user){
+            throw Error ('Necesitas iniciar sesion para acceder a este sitio')
+        }
         res.render('product-add', { perfil: db.Usuario});
     },
 
@@ -34,8 +37,8 @@ const controller = {
     },
 
     delete: function(req, res) {
-        if (!req.session.user) {
-            throw Error('Not authorized.')
+        if(!req.session.user){
+            throw Error ('Necesitas iniciar sesion para acceder a este sitio')
         }
         db.Producto.destroy({ where: { id : req.params.id } })
             .then(function() {
@@ -65,7 +68,6 @@ const controller = {
     },
     
     edit: function(req, res) {
-
         let relaciones = {
             include: {
                 all : true,
@@ -94,7 +96,7 @@ const controller = {
 
     comment: function (req, res, next) {
         if (!req.session.user) { 
-            throw Error('no tienes autorización')
+            throw Error('Debes iniciar sesion para hacer comenarios')
         }
         req.body.user_id = req.session.user.id;
         req.body.producto_id = req.params.id;

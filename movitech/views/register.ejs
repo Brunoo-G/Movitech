@@ -12,6 +12,11 @@
 									<div class="titulo">
 										Crea tu cuenta
 									</div>
+									<% if (locals.error) { %>
+										<div class="titulo" style="font-size: 120%; color: red;" role="alert">
+											¡<%= error %>!
+										</div>
+									<% } %> 
 									<form method="post"  id="loginform" enctype="multipart/form-data">
 										<input  type="text" name="email" placeholder="Email">
 

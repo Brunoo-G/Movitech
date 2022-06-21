@@ -7,7 +7,7 @@ const controller = {
     index: function(req, res, next) {
         db.Producto.findAll({
             order: [
-                ["updated_at", "DESC"]
+                ["created_at", "DESC"]
             ],
             limit: 8,
             include: {all:true, nested:false},
@@ -62,18 +62,24 @@ const controller = {
 
     access: function(req, res, next) {
         db.Usuario.findOne({where: {nombre: req.body.usuario}})
-        .then(function(user){
-            console.log(user)
-            if (!user) throw Error("Usuario no existente")
+            .then(function(user){
+
+            try {
+                if (!user) throw Error("Usuario no existente")
+                if(!hasher.compareSync(req.body.password, user.contraseña))
+                throw Error ("contraseña incorrecta")
+            } catch(err) {
+                res.render('login', {error: err.message});
+                return;
+            } next   
+
             if (hasher.compareSync(req.body.password, user.contraseña)) {
                 req.session.user = user.dataValues;
                 if (!req.body.recordarUsuario) {
                     res.cookie( 'userId' , user.dataValues.id, {maxAge: 1000 * 60 * 60 * 7}) 
                 }
                 res.redirect("/");
-            } else {
-                throw Error ("Usuario o contraseña incorrectos")
-            }
+            } 
         })
         .catch(function(error){
             next(error)
@@ -91,7 +97,13 @@ const controller = {
     },
 
     store: function(req, res, next) {
-        if (!req.body.email) { throw Error('ingresar un email existente.') }
+        try{
+            if (!req.body.email) { throw Error('Debes ingresar un email existente') }
+            if (!req.body.nombre) { throw Error('Debes ingresar un usuario') }
+        } catch(err) {
+            res.render('register', {error: err.message});
+            return;
+        }next
         const hashedPassword = hasher.hashSync(req.body.contraseña, 10);
         db.Usuario.create({
                 email: req.body.email,
