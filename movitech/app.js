@@ -34,7 +34,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// insertar cookie
 app.use(function(req, res, next) {
   if (!req.session.user && req.cookies.userId) {
     // Find the user

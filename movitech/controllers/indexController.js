@@ -67,11 +67,11 @@ const controller = {
             try {
                 if (!user) throw Error("Usuario no existente")
                 if(!hasher.compareSync(req.body.password, user.contraseña))
-                throw Error ("contraseña incorrecta")
+                throw Error ("Contraseña incorrecta")
             } catch(err) {
                 res.render('login', {error: err.message});
                 return;
-            } next   
+            } next()   
 
             if (hasher.compareSync(req.body.password, user.contraseña)) {
                 req.session.user = user.dataValues;
