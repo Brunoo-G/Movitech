@@ -33,9 +33,7 @@ const controller = {
            
     },
 
-    // todavia no funciona
     update: function(req, res) {
-
         if (req.file) req.body.foto = (req.file.path).replace('public', '');
         if(req.body.contraseña) {
             req.body.contraseña = hasher.hashSync(req.body.contraseña, 10 );

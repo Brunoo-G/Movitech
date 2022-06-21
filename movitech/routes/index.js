@@ -4,7 +4,6 @@ var controller = require('../controllers/indexController')
 var multer = require('multer');
 const upload = multer({ dest: 'public/images/uploads' });
 
-
 /* GET home page. */
 router.get('/', controller.index);
 

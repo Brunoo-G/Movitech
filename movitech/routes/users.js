@@ -4,7 +4,6 @@ var controller = require('../controllers/userController')
 var multer = require('multer');
 const upload = multer({ dest: 'public/images/uploads' });
 
-
 /* GET user listing. */
 router.get('/profile', controller.profile);
 
