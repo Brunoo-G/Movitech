@@ -689,11 +689,6 @@ textarea.form-input {
   flex-direction: row;
 }
 
-.foto{
-  height: 262px;
-  width: 255px;
-}
-
 .edicion{
   display: flex;
   flex-direction: row-reverse;
