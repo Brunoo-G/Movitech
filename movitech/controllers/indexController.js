@@ -22,10 +22,12 @@ const controller = {
     search: function(req,res){  
         let palabraBuscada = req.query.search; /* search es el input name del formulario de los headers*/ 
         let promesaNombre = Productos.findAll({
-                                where:[{ nombre:{ [op.like]: `%${palabraBuscada}%`}}] 
+                                where:[{ nombre:{ [op.like]: `%${palabraBuscada}%`}}], 
+                                include: {all: true, nested: false}
                              });
         let promesaDescripcion = Productos.findAll({
-                        where:[{ descripcion:{ [op.like]: `%${palabraBuscada}%`}}]
+                        where:[{ descripcion:{ [op.like]: `%${palabraBuscada}%`}}],
+                        include: {all: true, nested: false}
                     });
         let erroresBuscador = {};
         if(palabraBuscada == "") {
