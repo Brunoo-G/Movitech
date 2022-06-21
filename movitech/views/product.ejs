@@ -25,7 +25,7 @@
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
 						<img src="<%= data.imagen %>" alt="" class="product-detail-img">
-						<p class="product-detail-description"><strong>Vendedor:</strong> <a href="/users/profile"> <%= data.usuario.nombre %></a></p>
+						<p class="product-detail-description"><strong>Vendedor:</strong> <a href="/users/profile/<%= data.usuario.id %>"> <%= data.usuario.nombre %></a></p>
 						<p class="product-detail-description"><strong>Descripcion:</strong> <%= data.descripcion %></p>
 					</article>
 					
@@ -37,7 +37,7 @@
 									<img src="<%= data.comentarios[i].usuario.foto %>" alt="">
 									<div class="data">
 										<p class="user">
-										<strong> <a href="/users/profile"><%= data.comentarios[i].usuario.nombre +':' %></a> </strong>
+										<strong> <a href="/users/profile/<%= data.comentarios[i].usuario.id %>"><%= data.comentarios[i].usuario.nombre +':' %></a> </strong>
 										<%= data.comentarios[i].texto %></p>
 									</div>
 								</article>

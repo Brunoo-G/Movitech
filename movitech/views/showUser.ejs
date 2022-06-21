@@ -1,0 +1,60 @@
+<!-- Include Head -->
+<%- include('./partials/header.ejs') %> 
+
+	<body>
+		<!-- Datos del usuario -->
+		<section class="info-usuario container products-wrapper">
+			<div class="row">
+				<div class="img-container offset-3 col-2">
+					<img src= <%= perfil.foto %> alt="foto de perfil" class="foto-perfil">
+				</div>
+				<div class="data-container col-6">
+					<div class="d-flex align-items-center ">
+						<h1 class="main-title">
+							<%= perfil.nombre %>
+						</h1>
+					</div>
+					<div>
+						<h4><%= perfil.email %></h4>
+						<ul class="">
+							<li><strong>Productos: </strong> <%= perfil.productos.length %></li>
+							<li><strong>Comentarios: </strong><%= perfil.comentarios.length %></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Datos del usuario -->
+
+		<!-- Mis productos -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Productos del usuario</h2>
+				</div>
+				<!-- Show mis productos -->
+				<% for (let i = 0; i < perfil.productos.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/products/<%= perfil.productos[i].id %>">
+								<figure class="product-box_image">
+									<img class="foto" src="<%= perfil.productos[i].imagen %>" alt="<%= perfil.productos[i].nombre %>">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= perfil.productos[i].nombre %></h2>
+									<p><%= perfil.productos[i].descripcion %></p>
+								</article>
+							</a>
+						</section>
+					</div>	
+				<% } %>
+			</div>
+		</div>
+		<!-- /Mis productos -->
+
+		<!-- footer -->
+		<%- include('./partials/footer.ejs') %> 
+		<!-- /footer -->
+	</body>	
+	
+</html>

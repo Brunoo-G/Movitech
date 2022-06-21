@@ -48,6 +48,24 @@ const controller = {
             res.send(error);
         })
     },
+    showUser: function (req, res) {
+        let id = req.params.id ;
+
+        let relaciones = {
+            include: {
+                all: true,
+                nested: true
+            }
+        }
+
+        db.Usuario.findByPk(id, relaciones)
+        .then(function(perfil){
+            res.render('showUser', { perfil });
+        }) 
+        .catch(function(error){
+            console.log(error)
+        })  
+    }
 }
     
 module.exports = controller;
