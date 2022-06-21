@@ -14,11 +14,11 @@
 										Editar producto
 									</div>
 									<form method="post" action="/products/<%= data.id %>/edit" id="loginform" enctype="multipart/form-data">
-										<input  type="text" name="nombre" placeholder="<%= data.nombre %>">	
+										<input  type="text" name="nombre" value="<%= data.nombre %>">	
 										
-										<input type="text" name="descripcion" placeholder="<%= data.descripcion %>">
+										<input type="text" name="descripcion" value="<%= data.descripcion %>">
 
-										<input type="text" name="color" placeholder="<%= data.color %>">
+										<input type="text" name="color" value="<%= data.color %>">
 
 										<a style="color:white">Fotos del producto</a>
 										<input type="file" name="imagenProducto" style="background-color: rgb(205 205 205);

@@ -12,16 +12,16 @@
 								<div class="titulo">
 									Editar mi perfil
 								</div>
-								<form method="post" action="/users/profile" id="loginform" enctype="multipart/form-data">
-									<input  type="email" name="email" placeholder="<%= perfil.email %>">
+								<form method="post" action="/users/profile/edit" id="loginform" enctype="multipart/form-data">
+									<input  type="email" name="email" value="<%= perfil.email %>">
 
-									<input type="text" name="nombre" placeholder="<%= perfil.nombre %>">
+									<input type="text" name="nombre" value="<%= perfil.nombre %>">
 									
 									<input type="password"  name="contraseña" placeholder="Nueva contraseña">
 
-									<input type="date" name="nacimiento" placeholder="<%= perfil.nacimiento %>">
+									<input type="date" name="nacimiento" value="<%= perfil.nacimiento %>">
 									
-									<input type="number" name="documento" placeholder="<%= perfil.documento %>">
+									<input type="number" name="documento" value="<%= perfil.documento %>">
 									
 									<a style="color:white">Foto de perfil</a>
 									<input type="file" name="fotoDePerfi" style="background-color: rgb(205 205 205);

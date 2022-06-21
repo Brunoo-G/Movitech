@@ -35,11 +35,16 @@ const controller = {
 
     // todavia no funciona
     update: function(req, res) {
-        if(req.body.usuario_id = req.session.user.id)
-        if (req.file) req.body.fotoDePerfi = (req.file.path).replace('public', '');
-        db.Usuario.update(req.body, {where: {id: req.params.id}})
+
+        if (req.file) req.body.foto = (req.file.path).replace('public', '');
+        if(req.body.contraseña) {
+            req.body.contraseña = hasher.hashSync(req.body.contraseña, 10 );
+        } else{
+            req.body.contraseña = undefined;
+        }
+        db.Usuario.update(req.body, {where: {id: req.session.user.id}})
         .then(function() {
-            res.redirect('/user/profile')
+            res.redirect('/users/profile')
         })
         .catch(function(error) {
             res.send(error);

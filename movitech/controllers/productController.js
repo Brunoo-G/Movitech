@@ -82,8 +82,7 @@ const controller = {
         },
 
     updateProduct: function(req, res) {
-        //no funciona Multer
-        if (req.file) req.body.imagenProducto = (req.file.path).replace('public', '')
+        if (req.file) req.body.imagen = (req.file.path).replace('public', '') 
         db.Producto.update(req.body, { where: { id: req.params.id } })
             .then(function() {
                 res.redirect('/')
