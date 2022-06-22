@@ -48,6 +48,7 @@ const controller = {
             res.send(error);
         })
     },
+    
     showUser: function (req, res) {
         let id = req.params.id ;
 
