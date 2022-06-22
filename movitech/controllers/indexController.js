@@ -71,7 +71,7 @@ const controller = {
             } catch(err) {
                 res.render('login', {error: err.message});
                 return;
-            }    
+            }next  
 
             if (hasher.compareSync(req.body.password, user.contraseña)) {
                 req.session.user = user.dataValues;
